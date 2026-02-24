@@ -14,7 +14,15 @@
     <p id="loginMessage"></p>
 </div>
 
-<audio src="muzik.mp3" autoplay loop></audio>
+<audio id="bgMusic" src="muzik.mp3" loop></audio>
+
+<script>
+let music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicStarted") === "true"){
+    music.play();
+}
+</script>
     
 <script src="script.js"></script>
 </body>
