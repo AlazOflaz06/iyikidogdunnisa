@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nisa Hanım Doğum Günü</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0f0f1a;
+    color:white;
+}
+.login-screen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+input{
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    margin-top:10px;
+}
+button{
+    padding:10px 20px;
+    margin-top:15px;
+    border:none;
+    background:#ff2e8b;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#ff4da6;
+}
+.panel{
+    display:none;
+}
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:#1c1c2e;
+    position:fixed;
+    padding-top:20px;
+}
+.sidebar h2{
+    text-align:center;
+}
+.sidebar a{
+    display:block;
+    padding:10px;
+    color:white;
+    text-decoration:none;
+}
+.sidebar a:hover{
+    background:#ff2e8b;
+}
+.content{
+    margin-left:230px;
+    padding:20px;
+}
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:10px;
+}
+.gallery img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    background:#222;
+}
+.section{
+    margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<div class="login-screen" id="login">
+    <h2>Şifre: nisa</h2>
+    <input type="password" id="password" placeholder="Şifreyi giriniz">
+    <button onclick="checkPassword()">Giriş Yap</button>
+    <p id="loginMessage"></p>
+</div>
+
+<div class="panel" id="panel">
+    <div class="sidebar">
+        <h2>🎂 Menü</h2>
+        <a href="#">Ana Sayfa</a>
+        <a href="#">Galeri</a>
+        <a href="#">Doğum Günü Mesajı</a>
+        <a href="#">Söylemek İstediklerim</a>
+        <a href="#">Pişmanlıklarım</a>
+    </div>
+
+    <div class="content">
+        <h1>Hoşgeldiniz Nisa Hanım İyiki Doğdunuz</h1>
+        <p>28.02.2026 Bugün Sizin Doğum Gününüz Bu Siteyi Sizin İçin Özel Olarak Alaz Oflaz Tasarlamıştır.</p>
+
+        <div class="section">
+            <h2>Galeri</h2>
+            <div class="gallery">
+                <img src="1.jpg">
+                <img src="2.jpg">
+                <img src="3.jpg">
+                <img src="4.jpg">
+                <img src="5.jpg">
+                <img src="6.jpg">
+                <img src="7.jpg">
+                <img src="8.jpg">
+                <img src="9.jpg">
+                <img src="10.jpg">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Doğum Günü Mesajı</h2>
+            <p>Mesajınızı buraya yazabilirsiniz.</p>
+        </div>
+
+        <div class="section">
+            <h2>Söylemek İstediklerim</h2>
+            <p>Buraya söylemek istediklerinizi yazabilirsiniz.</p>
+        </div>
+
+        <div class="section">
+            <h2>Pişmanlıklarım</h2>
+            <p>Buraya pişmanlıklarınızı yazabilirsiniz.</p>
+        </div>
+    </div>
+</div>
+
+<audio id="music" src="muzik.mp3" loop></audio>
+
+<script>
+function checkPassword(){
+    var pass = document.getElementById("password").value;
+    var message = document.getElementById("loginMessage");
+    if(pass === "nisa"){
+        message.innerHTML = "Girişiniz onaylanmıştır Nisa Hanım doğum gününüz kutlu olsun müziği dinlemek için sesi açınız";
+        setTimeout(function(){
+            document.getElementById("login").style.display="none";
+            document.getElementById("panel").style.display="block";
+            document.getElementById("music").play();
+        },2000);
+    } else {
+        message.innerHTML = "Yanlış şifre!";
+    }
+}
+</script>
+
+</body>
+</html>
