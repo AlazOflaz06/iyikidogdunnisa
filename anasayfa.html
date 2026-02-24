@@ -21,7 +21,15 @@
 <p>28.02.2026 Bugün Sizin Doğum Gününüz Bu Siteyi Sizin İçin Özel Olarak Alaz Oflaz Tasarlamıştır.</p>
 </div>
 
-<audio src="muzik.mp3" autoplay loop></audio>
+<audio id="bgMusic" src="muzik.mp3" loop></audio>
+
+<script>
+let music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicStarted") === "true"){
+    music.play();
+}
+</script>
 
 </body>
 </html>
