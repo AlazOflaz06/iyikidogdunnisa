@@ -18,6 +18,16 @@
 <h2>Söylemek İstediklerim</h2>
 <p>Buraya yazacaksın.</p>
 </div>
+  
+<audio id="bgMusic" src="muzik.mp3" loop></audio>
 
+<script>
+let music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicStarted") === "true"){
+    music.play();
+}
+</script>
+  
 </body>
 </html>
